@@ -21,7 +21,14 @@ const Index = () => {
 	const [vars, setVars] = useState<Condition>({})
 	const [isWriting, setIsWriting] = useState(false)
 	const [showEnd, setShowEnd] = useState(false)
-
+	useEffect(() => {
+		const marc = contacts.find((c) => c.name === 'Livreur de pizza')
+		if (marc && marc.messages.length === 0) {
+			playMarc()
+			// eslint-disable-next-line react-hooks/exhaustive-deps
+		}
+	}, [contacts])
+	
 	useEffect(() => {
 		if (
 			vars['MARC'] &&
@@ -35,9 +42,6 @@ const Index = () => {
 					avatarUrl: '/person2.jpg',
 				},
 			])
-			if (contacts.find((c) => c.name === 'Livreur de pizza')) {
-				playMarc()
-			}
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [vars])
