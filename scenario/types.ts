@@ -27,7 +27,7 @@ export type Delay = {
 export type NextId = {
     conditional?: {
         id: number,
-        conditions: Condition[],
+        conditions: Condition,
     }[], 
     default: {
         id: number,
