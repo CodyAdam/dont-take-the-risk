@@ -53,10 +53,10 @@ const Index = () => {
 					className='absolute flex h-full w-full grow flex-col bg-base-200 transition-all md:relative md:w-auto md:!translate-x-0'
 					style={{ translate: openMsg ? '0' : '100%' }}
 				>
-					<button onClick={() => setOpenMsg(false)} className='btn md:hidden'>
-						toggle
-					</button>
-					<MessagePanel contact={selectedContact} />
+					<MessagePanel
+						contact={selectedContact}
+						onClose={() => setOpenMsg(false)}
+					/>
 				</div>
 			</div>
 		</Page>
