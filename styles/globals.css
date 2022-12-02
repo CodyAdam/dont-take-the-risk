@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	.no-uppercase {
+		text-transform: none;
+	}
+}
 body {
 	@apply min-h-screen select-none bg-zinc-50 text-zinc-900 antialiased p-safe dark:bg-zinc-900 dark:text-zinc-50;
 
