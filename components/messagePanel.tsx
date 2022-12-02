@@ -164,7 +164,7 @@ export const MessagePanel = ({
 						type='text'
 						placeholder='Type here'
 						value={''}
-						className='input w-full grow rounded-full'
+						className='input w-full grow rounded-full pointer-events-none'
 						onChange={() => {}}
 					/>
 					<button className='btn-primary btn h-12 w-12 rounded-full px-0'>
