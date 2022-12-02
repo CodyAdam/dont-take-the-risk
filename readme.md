@@ -1,54 +1,32 @@
-<p align="center">
-	<img alt="Rice Bowl" src="public/images/icon-512.png" width="90">
-	<h2 align="center">Next PWA Template</h2>
-</p>
+# 💉 Don't take the risk
 
-<p align="center">Fluffless app template to inspire less</p>
+![Nuit de l'info 2022](https://img.shields.io/badge/Nuit%20de%20l'info-2022-green)
 
-<p align="center">
-	<a href="https://next-pwa-template.now.sh">Live demo</a>
-</p>
+## Concept
 
-<p align="center">
-	<a href="https://web.dev/measure">
-		<img alt="100% lighthouse scores" src="https://img.shields.io/badge/lighthouse-100%25-845EF7.svg?logo=lighthouse&logoColor=white&style=flat-square" />
-	</a>
-</p>
+Dans cette application, vous allez parler avec votre connaissance Sophie qui va à une fête et lui donner vos meilleurs conseils pour éviter qu'il ne lui arrive malheur.
 
-## Features
+Vous pourrez ainsi tester vos connaissances et en apprendre plus sur les risques liés au sida avec un cas pratique.
 
-- ✨ Fluffless PWA using Next 12
-- 🌗 Lovely night/day themes
-- 🦄 Easily removable [nice-to-haves](#use-only-what-you-need)
-- 📱 Native-like mobile experience
-- 📦 Neatly wrapped like that avocado you got for christmas
+## Mode de jeu
 
-## Getting started
+Vous pouvez trouver l'application en ligne sur [https://hiv.codyadm.com](https://hiv.codyadm.com) 
 
-1. [Use this template](https://github.com/mvllow/next-pwa-template/generate)
-2. Replace `public/images` with your own
-3. Enjoy ✨
+Le jeu se joue par sélection d'une réponse parmi plusieurs comme si vous vous envoyiez des messages privés avec Sophie. 
 
-## Use only what you need
+À la fin de votre échange avec Sophie vous obtiendez la liste des points à améliorer lors de votre prochain échange avec Sophie.
 
-Fluffless doesn't mean "start with nothing". The goal of this template is to be an entry into maintainable apps.
+## Easter egg
+<details>
+<summary>🔺Attention spoiler🔺</summary>
 
-**The essentials**
+Vous pourrez aussi essayer de parler à Marc, un de vos amis d'enfance à vous et Sophie. Il vous permettra de débloquer une nouvelle technique de séduction pour Sophie. 
 
-- Typescript, made easy with Next.js
-- [tailwindcss](https://github.com/tailwindlabs/tailwindcss) for utility-first styling
-- [next-pwa](https://github.com/shadowwalker/next-pwa) for offline support
+</details>
+ 
 
-**Nice to haves**
+## Acknowledgments
 
-- [next-themes](https://github.com/pacocoursey/next-themes) or similar for low stress theming
+Ce projet a été fait durant la [Nuit de l'info 2022](https://www.nuitdelinfo.com/).
 
-## Gallery
-
-### Desktop
-
-<img alt="" src="public/images/macos.png" width="500" />
-
-### Mobile
-
-<img alt="" src="public/images/ios.png" width="500" />
+Nous remercions l'ISTIC d'avoir été notre centre d'accueil pour cette événement
