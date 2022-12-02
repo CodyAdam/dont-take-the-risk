@@ -4,4 +4,8 @@ module.exports = {
 		'./components/**/*.{js,ts,jsx,tsx}',
 	],
 	plugins: [require('tailwindcss-safe-area'), require("daisyui")],
+	daisyui: {
+		themes: ["light"],
+	},
+}
 }
