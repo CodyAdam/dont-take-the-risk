@@ -1,6 +1,7 @@
 import { Contact } from './contact'
 import Image from 'next/image'
 import MaterialSymbolsCheckSmall from './icones/MaterialSymbolsCheckSmall'
+import { formatDate } from '@/utils/date-helper'
 
 export type Message = {
 	fromMe: boolean
@@ -22,7 +23,7 @@ export const Message = ({ message, contact }: Props) => {
 			} gap-3`}
 		>
 			{!message.fromMe && (
-				<div className='avatar h-10 w-10 self-start'>
+				<div className='avatar h-10 w-10 shrink-0 self-start'>
 					<Image
 						src={
 							contact ? contact.avatarUrl : 'https://i.pravatar.cc/150?img=1'
@@ -46,14 +47,16 @@ export const Message = ({ message, contact }: Props) => {
 					}`}
 				>
 					<p>{message.content}</p>
-					{message.seen && <MaterialSymbolsCheckSmall className='h-4 w-4' />}
 				</div>
 				<p
-					className={`text-xs text-neutral ${
-						message.fromMe ? 'text-right' : ''
+					className={`flex flex-nowrap gap-1 text-xs text-neutral ${
+						message.fromMe ? 'justify-end' : ''
 					}`}
 				>
-					{message.date.toLocaleTimeString()}
+					{message.seen && (
+						<MaterialSymbolsCheckSmall className='h-4 w-4 shrink-0' />
+					)}
+					{formatDate(message.date, true)}
 				</p>
 			</div>
 		</div>
