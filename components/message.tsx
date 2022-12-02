@@ -19,10 +19,10 @@ export const Message = ({ message, contact }: Props) => {
 		<div
 			className={`flex items-center justify-${
 				message.fromMe ? 'end' : 'start'
-			} gap-3 px-6`}
+			} gap-3`}
 		>
 			{!message.fromMe && (
-				<div className='avatar h-10 w-10'>
+				<div className='avatar h-10 w-10 self-start'>
 					<Image
 						src={
 							contact ? contact.avatarUrl : 'https://i.pravatar.cc/150?img=1'
@@ -39,7 +39,7 @@ export const Message = ({ message, contact }: Props) => {
 				} gap-1`}
 			>
 				<div
-					className={`flex items-center gap-2 rounded-lg px-4 py-2 ${
+					className={`flex items-center gap-2 rounded-[1rem] px-4 py-2 ${
 						message.fromMe
 							? 'justify-start bg-primary text-primary-content'
 							: 'justify-end bg-base-100 text-neutral'
