@@ -446,24 +446,24 @@ export const scenario: Node[] = [
 		],
 	},
 	{
-		id: 11,
+		id: 183,
 		type: 'msg',
 		msg: "J'ai rencontré un mec super",
 		nextid: {
 			default: {
-				id: 12,
+				id: 182,
 			},
 		},
 	},
 	{
-		id: 12,
+		id: 182,
 		type: 'choice',
 		options: [
 			{
 				text: 'Ah ouais ?',
 				nextid: {
 					default: {
-						id: 13,
+						id: 213,
 					},
 				},
 			},
@@ -471,7 +471,7 @@ export const scenario: Node[] = [
 				text: "Tu vois je te l'avais dit",
 				nextid: {
 					default: {
-						id: 13,
+						id: 213,
 					},
 				},
 			},
@@ -479,59 +479,59 @@ export const scenario: Node[] = [
 				text: 'Il est comment ?',
 				nextid: {
 					default: {
-						id: 13,
+						id: 213,
 					},
 				},
 			},
 		],
 	},
 	{
-		id: 13,
+		id: 213,
 		type: 'msg',
 		msg: 'Il est super',
 		nextid: {
 			default: {
-				id: 14,
+				id: 214,
 			},
 		},
 	},
 	{
-		id: 14,
+		id: 214,
 		type: 'delay',
 		duration: 1000,
 		nextid: {
 			default: {
-				id: 15,
+				id: 215,
 			},
 		},
 	},
 	{
-		id: 15,
+		id: 215,
 		type: 'msg',
 		msg: 'je ne sais pas quoi faire',
 		nextid: {
 			conditional: [
 				{
-					id: 18,
+					id: 218,
 					conditions: {
 						MARC: true,
 					},
 				},
 			],
 			default: {
-				id: 16,
+				id: 216,
 			},
 		},
 	},
 	{
-		id: 16,
+		id: 216,
 		type: 'choice',
 		options: [
 			{
 				text: 'Tu devrais le voir',
 				nextid: {
 					default: {
-						id: 17,
+						id: 217,
 					},
 				},
 			},
@@ -539,21 +539,21 @@ export const scenario: Node[] = [
 				text: 'Montre lui tes pas de tango',
 				nextid: {
 					default: {
-						id: 17,
+						id: 217,
 					},
 				},
 			},
 		],
 	},
 	{
-		id: 18,
+		id: 218,
 		type: 'choice',
 		options: [
 			{
 				text: 'Tu devrais le voir',
 				nextid: {
 					default: {
-						id: 17,
+						id: 217,
 					},
 				},
 			},
@@ -561,7 +561,7 @@ export const scenario: Node[] = [
 				text: 'Montre lui tes pas de tango',
 				nextid: {
 					default: {
-						id: 17,
+						id: 217,
 					},
 				},
 			},
@@ -569,29 +569,29 @@ export const scenario: Node[] = [
 				text: "Tu crois qu'il aime la pizza ? J'ai peut-être quelque chose pour toi",
 				nextid: {
 					default: {
-						id: 19,
+						id: 219,
 					},
 				},
 			},
 		],
 	},
 	{
-		id: 19,
+		id: 219,
 		type: 'msg',
 		msg: '*Le coup de coeur de Sophie est particulièrement sous le charme*',
 		nextid: {
 			default: {
-				id: 110,
+				id: 100,
 			},
 		},
 	},
 	{
-		id: 17,
+		id: 217,
 		type: 'msg',
 		msg: '*Le coup de coeur de Sophie a un faible pour elle*',
 		nextid: {
 			default: {
-				id: 110,
+				id: 100,
 			},
 		},
 	},
@@ -601,7 +601,7 @@ export const scenario: Node[] = [
 		duration: 3000,
 		nextid: {
 			default: {
-				id: 100,
+				id: 183,
 			},
 		},
 	},
