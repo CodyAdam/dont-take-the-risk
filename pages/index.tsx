@@ -249,6 +249,7 @@ const Index = () => {
 					id='my-modal'
 					className='modal-toggle'
 					checked={showEnd}
+					onChange={()=>{}}
 				/>
 				<div className='modal'>
 					<div className='modal-box'>
