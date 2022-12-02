@@ -113,27 +113,9 @@ export const scenario: Node[] = [
 
 export const initialContact: Contact[] = [
 	{
-		name: 'John Doe',
+		name: 'Sophie',
 		messages: [
-			{
-				fromMe: false,
-				date: negativeDate(13),
-				content: 'Hellodwajdiaw\ndawjidjwaoijd\njdiwa',
-				seen: true,
-			},
 		],
 		avatarUrl: '/person1.jpg',
-	},
-	{
-		name: 'Maelito kevin',
-		messages: [
-			{
-				fromMe: true,
-				date: negativeDate(3, 1),
-				content: 'Hellolo',
-				seen: false,
-			},
-		],
-		avatarUrl: '/person2.jpg',
 	},
 ]

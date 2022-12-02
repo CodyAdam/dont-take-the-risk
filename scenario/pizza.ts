@@ -1,7 +1,7 @@
 import { Node } from "./types";
 
 // Scenario de la discussion avec Marc le livreur de pizza
-export const scenario: Node[] = [
+export const scenarioMarc: Node[] = [
     {
         id: 1,
         type: "msg",
