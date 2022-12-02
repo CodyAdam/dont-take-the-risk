@@ -196,6 +196,9 @@ export const scenario: Node[] = [
             },
             {
                 text:"Tu as des nouvelles de Marc ?",
+                set: {
+                    MARC : true,
+                },
                 nextid: {
                     default: {
                         id: 15,

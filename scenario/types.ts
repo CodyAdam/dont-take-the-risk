@@ -14,6 +14,9 @@ export type Choice = {
 export type Option = {
     text: string,
     nextid: NextId,
+    set?:{
+        [key: string]: boolean
+    }
 };
 
 export type Delay = {
