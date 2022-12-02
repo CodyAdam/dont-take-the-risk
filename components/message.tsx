@@ -3,6 +3,7 @@ import Image from 'next/image'
 import MaterialSymbolsCheckSmall from './icones/MaterialSymbolsCheckSmall'
 import { formatDate } from '@/utils/date-helper'
 import EosIconsThreeDotsLoading from './icones/EosIconsThreeDotsLoading'
+import { useEffect, useState } from 'react'
 
 export type Message = {
 	fromMe: boolean
@@ -18,6 +19,17 @@ type Props = {
 }
 
 export const Message = ({ message, contact, isWriting }: Props) => {
+	const [date, setDate] = useState<string | null>(null)
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const updateTime = () => {
+		if (message) {
+			setDate(formatDate(message.date, true))
+		}
+	}
+	useEffect(() => {
+		setTimeout(updateTime, 5000)
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
 	if (isWriting)
 		return (
 			<div
@@ -93,7 +105,7 @@ export const Message = ({ message, contact, isWriting }: Props) => {
 					{message.seen && (
 						<MaterialSymbolsCheckSmall className='h-4 w-4 shrink-0' />
 					)}
-					{formatDate(message.date, true)}
+					{date}
 				</p>
 			</div>
 		</div>

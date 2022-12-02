@@ -25,8 +25,8 @@ const Index = () => {
 		const marc = contacts.find((c) => c.name === 'Livreur de pizza')
 		if (marc && marc.messages.length === 0) {
 			playMarc()
-			// eslint-disable-next-line react-hooks/exhaustive-deps
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [contacts])
 	
 	useEffect(() => {
