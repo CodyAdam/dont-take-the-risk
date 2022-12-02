@@ -7,8 +7,8 @@ import { Choice, Condition, NextId, Node, Option } from '@/scenario/types'
 import { useEffect, useState } from 'react'
 import { scenarioMarc } from '@/scenario/pizza'
 
-const DELAY = 3000
-// const DELAY = 0
+// const DELAY = 3000
+const DELAY = 0
 const Index = () => {
 	const [openMsg, setOpenMsg] = useState(true)
 	const [contacts, setContacts] = useState(initialContact)
@@ -156,6 +156,7 @@ const Index = () => {
 	}
 
 	const selectChoice = (option: Option, marc?: boolean) => {
+		if (showEnd) return
 		if (option.set) {
 			setVars({ ...vars, ...option.set })
 		}
@@ -177,6 +178,7 @@ const Index = () => {
 		goWithDelay(option.nextid, DELAY)
 	}
 	const selectChoiceMarc = (option: Option) => {
+		if (showEnd) return
 		if (option.set) {
 			setVars({ ...vars, ...option.set })
 		}
@@ -257,13 +259,13 @@ const Index = () => {
 							Merci d&apos;avoir joué à ce jeu !
 						</h3>
 						{Object.keys(vars).length == 0 ? (
-							<p className='py-4 text-green-500'>C&apos;est un sans faute</p>
+							<p className='py-4 text-green-500 font-semibold'>C&apos;est un sans faute</p>
 						) : (
-							<p className='py-4 text-red-500'>
+							<p className='pt-4 text-red-500 font-semibold text-xl'>
 								Vous avez fait les érreurs suivantes :
 							</p>
 						)}
-						<div className='py-1 text-sm [&>p]:text-lg'>
+						<div className='pb-5 pt-2 pl-4 [&>p]:text-md'>
 							{Object.keys(vars).map((key) => {
 								if (key == 'SERO')
 									return (
@@ -307,8 +309,11 @@ const Index = () => {
 									)
 							})}
 						</div>
-						<p className='py-4 text-xs'>
-							Made with ❤️ by Cody ADAM, Mael KERICHARD and Thomas DELAPART
+						<p className='py-4 text-xs [&>a]:font-semibold [&>a]:text-blue-500'>
+							Fait avec ❤️ par <a href="https://codyadm.com">Cody ADAM</a>, <a href="https://mael.app/">Mael KERICHARD</a> et <a href="https://github.com/Thomega35">Thomas DELAPART</a>
+						</p>
+						<p className='py-4 text-xs [&>a]:font-semibold [&>a]:text-blue-500'>
+							 <a href="https://github.com/CodyAdam/dont-take-the-risk">Github</a>
 						</p>
 					</div>
 				</div>
