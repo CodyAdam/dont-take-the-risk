@@ -1,14 +1,26 @@
+import { Choice, Option } from '@/scenario/types'
 import { Contact } from './contact'
 import MaterialSymbolsSendRounded from './icones/MaterialSymbolsSendRounded'
 import RiArrowLeftLine from './icones/RiArrowLeftLine'
 import { Message } from './message'
 
 type Props = {
-	contact: Contact | null
+	contacts: Contact[]
+	selectedContact: string | null
 	onClose: () => void
+	onSelectChoice: (option: Option) => void
+	choice: Choice | null
 }
 
-export const MessagePanel = ({ contact, onClose }: Props) => {
+export const MessagePanel = ({
+	contacts,
+	selectedContact,
+	onClose,
+	choice,
+	onSelectChoice,
+}: Props) => {
+	if (!selectedContact) return null
+	const contact = contacts.find((c) => c.name === selectedContact)
 	if (!contact) return null
 
 	return (
@@ -30,79 +42,35 @@ export const MessagePanel = ({ contact, onClose }: Props) => {
 						contact={contact}
 					/>
 				))}
-				{contact.messages.map((message) => (
-					<Message
-						key={message.date.getTime()}
-						message={message}
-						contact={contact}
-					/>
-				))}
-				{contact.messages.map((message) => (
-					<Message
-						key={message.date.getTime()}
-						message={message}
-						contact={contact}
-					/>
-				))}
-				{contact.messages.map((message) => (
-					<Message
-						key={message.date.getTime()}
-						message={message}
-						contact={contact}
-					/>
-				))}
-				{contact.messages.map((message) => (
-					<Message
-						key={message.date.getTime()}
-						message={message}
-						contact={contact}
-					/>
-				))}
-				{contact.messages.map((message) => (
-					<Message
-						key={message.date.getTime()}
-						message={message}
-						contact={contact}
-					/>
-				))}
-				{contact.messages.map((message) => (
-					<Message
-						key={message.date.getTime()}
-						message={message}
-						contact={contact}
-					/>
-				))}
-				{contact.messages.map((message) => (
-					<Message
-						key={message.date.getTime()}
-						message={message}
-						contact={contact}
-					/>
-				))}
-				{contact.messages.map((message) => (
-					<Message
-						key={message.date.getTime()}
-						message={message}
-						contact={contact}
-					/>
-				))}
-				{contact.messages.map((message) => (
-					<Message
-						key={message.date.getTime()}
-						message={message}
-						contact={contact}
-					/>
-				))}
 			</div>
-			<div className='flex gap-5 p-5'>
-				<input
-					type='text'
-					placeholder='Type here'
-					className='input w-full rounded-full'
-				/>
-				<button className='btn-primary btn h-12 w-12 rounded-full px-0'>
-					<MaterialSymbolsSendRounded className='h-6 w-6' />
-				</button>
+			<div className='flex flex-col gap-5 p-5'>
+				<div className='flex w-full flex-wrap gap-4'>
+					{choice && (
+						<>
+							{choice.options.map((option) => (
+								<button
+									key={option.text}
+									onClick={() => onSelectChoice(option)}
+									className='btn-outline btn rounded-xl border-2'
+								>
+									{option.text}
+								</button>
+							))}
+						</>
+					)}
+				</div>
+				<div className='flex gap-4'>
+					<input
+						type='text'
+						placeholder='Type here'
+						value={''}
+						className='input w-full grow rounded-full'
+						onChange={() => {}}
+					/>
+					<button className='btn-primary btn h-12 w-12 rounded-full px-0'>
+						<MaterialSymbolsSendRounded className='h-6 w-6' />
+					</button>
+				</div>
 			</div>
 		</div>
 	)
