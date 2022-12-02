@@ -1,12 +1,14 @@
 # Suite de messages
 <!-- Visual nouvel prévention risques sida -->
 ## Discussion principale avec Sophie
+
 - Demande le prénom du joueur
 - Salutation
 - Annonce de départ en soirée
 - Présentation de Sophie (Optionnel)
   - Présentation en boucle/drôle easter egg
 - Présentation de la soirée (Optionnel)
+
 - Rencontre de Sophie avec son coup de coeur
 - Aide conseil de drague (Optionnel)
   - Partie drôle + easter egg
@@ -57,3 +59,10 @@
   - Numéros de renseignement
   - TPE
   - PREP
+
+## Disccusion avec le livreur de pizza
+
+- Débarque un peu perdu au milieu de la conversation
+- Nous demande de l'aide pour trouver un appartement
+- Fait une petite blague
+- reste bloqué sur la recherche de son appartement
