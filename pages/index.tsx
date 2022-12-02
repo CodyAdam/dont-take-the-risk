@@ -252,19 +252,23 @@ const Index = () => {
 				/>
 				<div className='modal'>
 					<div className='modal-box'>
-						<h3 className='text-3xl py-4 font-bold'>
+						<h3 className='py-4 text-3xl font-bold'>
 							Merci d&apos;avoir joué à ce jeu !
 						</h3>
-						<p className='py-4 text-red-500'>
-							Vous avez fait les érreurs suivantes :
-						</p>
+						{Object.keys(vars).length == 0 ? (
+							<p className='py-4 text-green-500'>C&apos;est un sans faute</p>
+						) : (
+							<p className='py-4 text-red-500'>
+								Vous avez fait les érreurs suivantes :
+							</p>
+						)}
 						<div className='py-1 text-sm [&>p]:text-lg'>
 							{Object.keys(vars).map((key) => {
 								if (key == 'SERO')
 									return (
 										<p key={key}>
-											- Vous n&apos;avez pas réussi à empecher la contamination de
-											sophie par le VIH
+											- Vous n&apos;avez pas réussi à empecher la contamination
+											de sophie par le VIH
 										</p>
 									)
 								if (key == 'FINFO')
@@ -295,9 +299,16 @@ const Index = () => {
 										</p>
 									)
 								if (key == 'MARC')
-									return <p key={key}>- Vous avez trouver l&apos;easter eggs (Marc)</p>
+									return (
+										<p key={key}>
+											- Vous avez trouver l&apos;easter eggs (Marc)
+										</p>
+									)
 							})}
 						</div>
+						<p className='py-4 text-xs'>
+							Made with ❤️ by Cody ADAM, Mael KERICHARD and Thomas DELAPART
+						</p>
 					</div>
 				</div>
 			</div>
