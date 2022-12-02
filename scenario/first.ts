@@ -780,7 +780,7 @@ export const scenario: Node[] = [
 				},
 			},
 			{
-				text: 'Tu peux deveir séropositive si tu ne te protège pas correctement',
+				text: 'Tu peux devenir séropositive si tu ne te protège pas correctement',
 				nextid: {
 					default: {
 						id: 121,
