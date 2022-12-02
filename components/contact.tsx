@@ -16,7 +16,7 @@ type Props = {
 export const ContactBar = ({ contact, onClick, className }: Props) => {
 	return (
 		<div
-			className={`${className} flex h-16 w-full items-center justify-between gap-3 px-6 cursor-pointer hover:bg-base-200`}
+			className={`${className} flex h-16 w-full items-center justify-between gap-3 px-6 cursor-pointer hover:bg-base-200/30`}
       onClick={onClick}
 		>
 			<div className='flex items-center gap-5'>
