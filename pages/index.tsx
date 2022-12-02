@@ -7,8 +7,7 @@ import { Choice, Condition, NextId, Node, Option } from '@/scenario/types'
 import { useEffect, useState } from 'react'
 import { scenarioMarc } from '@/scenario/pizza'
 
-const DELAY = 3000
-// const DELAY = 0
+const DELAY = 3000 // const DELAY = 0
 const Index = () => {
 	const [openMsg, setOpenMsg] = useState(true)
 	const [contacts, setContacts] = useState(initialContact)
@@ -89,7 +88,9 @@ const Index = () => {
 		} else if (mainNode.type == 'choice') {
 			setChoice(mainNode)
 		} else if (mainNode.type == 'delay') {
-			goWithDelay(mainNode.nextid, mainNode.duration + DELAY)
+			setTimeout(() => {
+				goWithDelay(mainNode.nextid, DELAY)
+			}, mainNode.duration * 2)
 		}
 	}
 
@@ -118,7 +119,9 @@ const Index = () => {
 		} else if (marcNode.type == 'choice') {
 			setChoiceMarc(marcNode)
 		} else if (marcNode.type == 'delay') {
-			goWithDelay(marcNode.nextid, marcNode.duration + DELAY, true)
+			setTimeout(() => {
+				goWithDelay(marcNode.nextid, DELAY, true)
+			}, marcNode.duration * 2)
 		}
 	}
 
@@ -251,7 +254,7 @@ const Index = () => {
 					id='my-modal'
 					className='modal-toggle'
 					checked={showEnd}
-					onChange={()=>{}}
+					onChange={() => {}}
 				/>
 				<div className='modal'>
 					<div className='modal-box'>
@@ -259,13 +262,15 @@ const Index = () => {
 							Merci d&apos;avoir joué à ce jeu !
 						</h3>
 						{Object.keys(vars).length == 0 ? (
-							<p className='py-4 text-green-500 font-semibold'>C&apos;est un sans faute</p>
+							<p className='py-4 font-semibold text-green-500'>
+								C&apos;est un sans faute
+							</p>
 						) : (
-							<p className='pt-4 text-red-500 font-semibold text-xl'>
+							<p className='pt-4 text-xl font-semibold text-red-500'>
 								Vous avez fait les érreurs suivantes :
 							</p>
 						)}
-						<div className='pb-5 pt-2 pl-4 [&>p]:text-md'>
+						<div className='[&>p]:text-md pb-5 pt-2 pl-4'>
 							{Object.keys(vars).map((key) => {
 								if (key == 'SERO')
 									return (
@@ -310,10 +315,14 @@ const Index = () => {
 							})}
 						</div>
 						<p className='py-4 text-xs [&>a]:font-semibold [&>a]:text-blue-500'>
-							Fait avec ❤️ par <a href="https://codyadm.com">Cody ADAM</a>, <a href="https://mael.app/">Mael KERICHARD</a> et <a href="https://github.com/Thomega35">Thomas DELAPART</a>
+							Fait avec ❤️ par <a href='https://codyadm.com'>Cody ADAM</a>,{' '}
+							<a href='https://mael.app/'>Mael KERICHARD</a> et{' '}
+							<a href='https://github.com/Thomega35'>Thomas DELAPART</a>
 						</p>
 						<p className='py-4 text-xs [&>a]:font-semibold [&>a]:text-blue-500'>
-							 <a href="https://github.com/CodyAdam/dont-take-the-risk">Github</a>
+							<a href='https://github.com/CodyAdam/dont-take-the-risk'>
+								Github
+							</a>
 						</p>
 					</div>
 				</div>

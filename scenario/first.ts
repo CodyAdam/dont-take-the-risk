@@ -598,7 +598,7 @@ export const scenario: Node[] = [
 	{
 		id: 10,
 		type: 'delay',
-		duration: 10000,
+		duration: 3000,
 		nextid: {
 			default: {
 				id: 100,
