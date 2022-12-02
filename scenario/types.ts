@@ -38,4 +38,9 @@ export type Condition = {
     value: string,
 };
 
-export type Node = Msg | Choice | Delay;
+export type End = {
+    id: number,
+    type: "end",
+};
+
+export type Node = Msg | Choice | Delay | End;

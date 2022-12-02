@@ -103,4 +103,8 @@ export const scenario: Node[] = [
             },
         },
     },
+    {
+        id: 7,
+        type: "end",
+    },
 ];
