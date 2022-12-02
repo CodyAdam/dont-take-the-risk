@@ -2,7 +2,7 @@ import { Contact, ContactBar } from '@/components/contact'
 import { MessagePanel } from '@/components/messagePanel'
 import Page from '@/components/page'
 import { initialContact, scenario } from '@/scenario/mock'
-import { Choice, NextId, Node, Option } from '@/scenario/types'
+import { Choice, Condition, NextId, Node, Option } from '@/scenario/types'
 import { useEffect, useState } from 'react'
 
 const Index = () => {
@@ -11,7 +11,7 @@ const Index = () => {
 	const [selectedContact, setSelectedContact] = useState<string | null>(null)
 	const [mainNode, setMainNode] = useState<Node | null>(scenario[0])
 	const [choice, setChoice] = useState<Choice | null>(null)
-	const [vars, setVars] = useState<{ [key: string]: string }>({})
+	const [vars, setVars] = useState<Condition>({})
 
 	useEffect(() => {
 		play()
@@ -57,9 +57,9 @@ const Index = () => {
 	const goToNextNode = (nextId: NextId) => {
 		if (nextId.conditional) {
 			nextId.conditional.forEach((cond) => {
-				let valid = true
-				cond.conditions.forEach((cond) => {
-					if (vars[cond.key] != cond.value) valid = false
+				let valid = false
+				Object.keys(cond.conditions).forEach((key) => {
+					if (vars[key] === cond.conditions[key]) valid = true
 				})
 				if (valid) {
 					const nextNode = scenario.find((node) => node.id == cond.id)
@@ -82,6 +82,9 @@ const Index = () => {
 	}
 
 	const selectChoice = (option: Option) => {
+		if (option.set) {
+			setVars({ ...vars, ...option.set })
+		}
 		const newContacts = contacts
 		newContacts[0] = {
 			...newContacts[0],
