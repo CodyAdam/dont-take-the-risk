@@ -128,11 +128,11 @@ export const MessagePanel = ({
 											onSelectChoiceMarc(option)
 										else onSelectChoice(option)
 									}}
-									className='border-1 no-uppercase btn-outline btn rounded-xl'
+									className='border-1 w-fit max-w-full text-left no-uppercase btn-outline btn rounded-xl flex flex-nowrap h-auto py-2'
 								>
-									<span className='kbd mr-2 !text-base-content'>
+									<div className='kbd mr-2 !text-base-content'>
 										{index + 1}
-									</span>
+									</div>
 									{option.text}
 								</button>
 							))}
@@ -148,7 +148,7 @@ export const MessagePanel = ({
 											onSelectChoiceMarc(option)
 										else onSelectChoice(option)
 									}}
-									className='border-1 no-uppercase btn-outline btn rounded-xl'
+									className='border-1 w-fit max-w-full text-left no-uppercase btn-outline btn rounded-xl flex flex-nowrap h-auto py-2'
 								>
 									<span className='kbd mr-2 !text-base-content'>
 										{index + 1}
