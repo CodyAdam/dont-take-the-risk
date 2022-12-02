@@ -32,6 +32,50 @@ export const MessagePanel = ({
 		if (scrollDiv.current)
 			scrollDiv.current.scrollTop = scrollDiv.current.scrollHeight
 	})
+	useEffect(() => {
+		const onKey = (e: KeyboardEvent) => {
+			if (choice && selectedContact == 'Sophie') {
+				if (e.key === '1') {
+					onSelectChoice(choice.options[0])
+				} else if (e.key === '2') {
+					onSelectChoice(choice.options[1])
+				} else if (e.key === '3') {
+					onSelectChoice(choice.options[2])
+				} else if (e.key === '4') {
+					onSelectChoice(choice.options[3])
+				}
+			}
+		}
+		window.addEventListener('keyup', onKey)
+		//number allow user to select choice
+
+		return () => {
+			window.removeEventListener('keyup', onKey)
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [choice])
+	useEffect(() => {
+		const onKey = (e: KeyboardEvent) => {
+			//number allow user to select choice
+			if (choiceMarc && selectedContact === 'Livreur de pizza') {
+				if (e.key === '1') {
+					onSelectChoiceMarc(choiceMarc.options[0])
+				} else if (e.key === '2') {
+					onSelectChoiceMarc(choiceMarc.options[1])
+				} else if (e.key === '3') {
+					onSelectChoiceMarc(choiceMarc.options[2])
+				} else if (e.key === '4') {
+					onSelectChoiceMarc(choiceMarc.options[3])
+				}
+			}
+		}
+		window.addEventListener('keyup', onKey)
+
+		return () => {
+			window.removeEventListener('keyup', onKey)
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [choiceMarc])
 
 	if (!selectedContact) return null
 	const contact = contacts.find((c) => c.name === selectedContact)
@@ -76,7 +120,7 @@ export const MessagePanel = ({
 				<div className='flex w-full max-w-2xl flex-wrap gap-4'>
 					{selectedContact == 'Sophie' && choice && (
 						<>
-							{choice.options.map((option) => (
+							{choice.options.map((option, index) => (
 								<button
 									key={option.text}
 									onClick={() => {
@@ -84,8 +128,11 @@ export const MessagePanel = ({
 											onSelectChoiceMarc(option)
 										else onSelectChoice(option)
 									}}
-									className='btn-outline btn rounded-xl border-2'
+									className='border-1 no-uppercase btn-outline btn rounded-xl'
 								>
+									<span className='kbd mr-2 !text-base-content'>
+										{index + 1}
+									</span>
 									{option.text}
 								</button>
 							))}
@@ -93,7 +140,7 @@ export const MessagePanel = ({
 					)}
 					{selectedContact == 'Livreur de pizza' && choiceMarc && (
 						<>
-							{choiceMarc.options.map((option) => (
+							{choiceMarc.options.map((option, index) => (
 								<button
 									key={option.text}
 									onClick={() => {
@@ -101,8 +148,11 @@ export const MessagePanel = ({
 											onSelectChoiceMarc(option)
 										else onSelectChoice(option)
 									}}
-									className='btn-outline btn rounded-xl border-2'
+									className='border-1 no-uppercase btn-outline btn rounded-xl'
 								>
+									<span className='kbd mr-2 !text-base-content'>
+										{index + 1}
+									</span>
 									{option.text}
 								</button>
 							))}
