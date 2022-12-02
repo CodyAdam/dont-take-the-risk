@@ -5,7 +5,7 @@ class MyDocument extends Document {
 		return (
 			<Html lang='fr'>
 				<Head />
-				<body>
+				<body className='overflow-hidden'>
 					<Main />
 					<NextScript />
 				</body>
