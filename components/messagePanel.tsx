@@ -35,13 +35,13 @@ export const MessagePanel = ({
 	useEffect(() => {
 		const onKey = (e: KeyboardEvent) => {
 			if (choice && selectedContact == 'Sophie') {
-				if (e.key === '1') {
+				if (e.key === '1' && choice.options.length >= 1) {
 					onSelectChoice(choice.options[0])
-				} else if (e.key === '2') {
+				} else if (e.key === '2' && choice.options.length >= 2) {
 					onSelectChoice(choice.options[1])
-				} else if (e.key === '3') {
+				} else if (e.key === '3' && choice.options.length >= 3) {
 					onSelectChoice(choice.options[2])
-				} else if (e.key === '4') {
+				} else if (e.key === '4' && choice.options.length >= 4) {
 					onSelectChoice(choice.options[3])
 				}
 			}
@@ -58,13 +58,13 @@ export const MessagePanel = ({
 		const onKey = (e: KeyboardEvent) => {
 			//number allow user to select choice
 			if (choiceMarc && selectedContact === 'Livreur de pizza') {
-				if (e.key === '1') {
+				if (e.key === '1' && choiceMarc.options.length >= 1) {
 					onSelectChoiceMarc(choiceMarc.options[0])
-				} else if (e.key === '2') {
+				} else if (e.key === '2' && choiceMarc.options.length >= 2) {
 					onSelectChoiceMarc(choiceMarc.options[1])
-				} else if (e.key === '3') {
+				} else if (e.key === '3' && choiceMarc.options.length >= 3) {
 					onSelectChoiceMarc(choiceMarc.options[2])
-				} else if (e.key === '4') {
+				} else if (e.key === '4' && choiceMarc.options.length >= 4) {
 					onSelectChoiceMarc(choiceMarc.options[3])
 				}
 			}
@@ -164,7 +164,7 @@ export const MessagePanel = ({
 						type='text'
 						placeholder='Type here'
 						value={''}
-						className='input w-full grow rounded-full pointer-events-none'
+						className='input pointer-events-none w-full grow rounded-full'
 						onChange={() => {}}
 					/>
 					<button className='btn-primary btn h-12 w-12 rounded-full px-0'>
