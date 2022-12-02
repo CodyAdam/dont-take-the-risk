@@ -7,8 +7,8 @@ import { Choice, Condition, NextId, Node, Option } from '@/scenario/types'
 import { useEffect, useState } from 'react'
 import { scenarioMarc } from '@/scenario/pizza'
 
-// const DELAY = 3000
-const DELAY = 0
+const DELAY = 3000
+// const DELAY = 0
 const Index = () => {
 	const [openMsg, setOpenMsg] = useState(true)
 	const [contacts, setContacts] = useState(initialContact)
@@ -252,50 +252,50 @@ const Index = () => {
 				/>
 				<div className='modal'>
 					<div className='modal-box'>
-						<h3 className='text-lg font-bold'>
+						<h3 className='text-3xl py-4 font-bold'>
 							Merci d&apos;avoir joué à ce jeu !
 						</h3>
 						<p className='py-4 text-red-500'>
-							Vous avez fait les érreurs suivantes
+							Vous avez fait les érreurs suivantes :
 						</p>
-						<div className='py-2 text-sm [&>p]:text-lg'>
+						<div className='py-1 text-sm [&>p]:text-lg'>
 							{Object.keys(vars).map((key) => {
 								if (key == 'SERO')
 									return (
 										<p key={key}>
-											Vous n&apos;avez pas réussi à empecher la contamination de
+											- Vous n&apos;avez pas réussi à empecher la contamination de
 											sophie par le VIH
 										</p>
 									)
 								if (key == 'FINFO')
 									return (
 										<p key={key}>
-											Vous avez donné des fausses informations à Sophie
+											- Vous avez donné des fausses informations à Sophie
 										</p>
 									)
 								if (key == 'FRISQUE')
 									return (
 										<p key={key}>
-											Vous avez menti à Sophie sur les risques qu&apos;elle
+											- Vous avez menti à Sophie sur les risques qu&apos;elle
 											encourait
 										</p>
 									)
 								if (key == 'RNPROTEGE')
 									return (
 										<p key={key}>
-											Vous n&apos;avez pas donné les bonnes consigne à Sophie
+											- Vous n&apos;avez pas donné les bonnes consigne à Sophie
 											pour qu&apos;elle se protège
 										</p>
 									)
 								if (key == 'NPREV')
 									return (
 										<p key={key}>
-											Vous n&apos;avez pas permis à Sophie de se protéger en
+											- Vous n&apos;avez pas permis à Sophie de se protéger en
 											amont de ce rapport
 										</p>
 									)
 								if (key == 'MARC')
-									return <p key={key}>Vous avez trouver l&apos;easter eggs</p>
+									return <p key={key}>- Vous avez trouver l&apos;easter eggs (Marc)</p>
 							})}
 						</div>
 					</div>
