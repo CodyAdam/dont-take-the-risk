@@ -7,8 +7,8 @@ import { Choice, Condition, NextId, Node, Option } from '@/scenario/types'
 import { useEffect, useState } from 'react'
 import { scenarioMarc } from '@/scenario/pizza'
 
-// const DELAY = 3000
-const DELAY = 0
+const DELAY = 3000
+// const DELAY = 0
 const Index = () => {
 	const [openMsg, setOpenMsg] = useState(true)
 	const [contacts, setContacts] = useState(initialContact)
